@@ -1,0 +1,168 @@
+$(".btn-delete").on("click", function (e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+
+  Swal.fire({
+    title: "Apakah kamu yakin ingin menghapus?",
+    text: "Data ini akan di hapus!",
+    type: "warning",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Hapus Data",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire({
+        icon: "success",
+        title: "Data berhasil di hapus",
+        showConfirmButton: false,
+      });
+      setTimeout(function () {
+        document.location.href = href;
+      }, 1200);
+    }
+  });
+});
+
+$(".btn-logout").on("click", function (e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+
+  Swal.fire({
+    title: "Apakah kamu yakin?",
+    text: "Ingin keluar dari website?",
+    type: "warning",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Logout",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire({
+        icon: "success",
+        title: "Anda berhasil logout",
+        showConfirmButton: false,
+      });
+      setTimeout(function () {
+        document.location.href = href;
+      }, 1200);
+    }
+  });
+});
+
+
+$(".btn-sure").on("click", function (e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+
+  Swal.fire({
+    title: "Apakah kamu yakin ingin menghapus?",
+    text: "data tidak bisa dikemablikan setelah dihapus!",
+    type: "warning",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Logout",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire({
+        icon: "success",
+        title: "Anda berhasil logout",
+        showConfirmButton: false,
+      });
+      setTimeout(function () {
+        document.location.href = href;
+      }, 1200);
+    }
+  });
+});
+
+const notifikasi = $(".info-data").data("infodata");
+
+if (notifikasi == "simpan") {
+  Swal.fire({
+    icon: "success",
+    title: "Data berhasil ditambahkan",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "hapus") {
+  Swal.fire({
+    icon: "esuccess",
+    title: "Data berhasil dihapus",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "update") {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Berhasil",
+    text: "Data berhasil di update",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+} else if (notifikasi == "login berhasil") {
+  Swal.fire({
+    icon: "success",
+    title: "Berhasil Login",
+    text: "Selamat datang di website rumah sakit",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "login gagal") {
+  Swal.fire({
+    icon: "error",
+    title: "oops!",
+    text: "Username dan password anda salah",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "has") {
+  Swal.fire({
+    icon: "error",
+    title: "oops!",
+    text: "Email telah terdaftar!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "register") {
+  Swal.fire({
+    icon: "success",
+    title: "Registrasi berhasil",
+    text: "Silahkan Login",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "password") {
+  Swal.fire({
+    icon: "error",
+    title: "oops!",
+    text: "Password anda tidak sesuai",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "login2") {
+  Swal.fire({
+    icon: "error",
+    title: "oops!",
+    text: "Username anda tidak sesuai",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+} else if (notifikasi == "login berhasil admin") {
+  Swal.fire({
+    icon: "success",
+    title: "Berhasil login sebagai admin",
+    text: "Selamat datang di halaman admin",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+}
+
+
+
+

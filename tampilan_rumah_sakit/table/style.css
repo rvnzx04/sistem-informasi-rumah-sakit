@@ -1,0 +1,20 @@
+body{
+	background-color: gainsboro;
+}
+
+
+tbody{
+	background-color:white;
+}
+
+td:hover{
+	background-color: gainsboro;
+}
+
+tr{
+	text-align: center;
+}
+
+td {
+	text-align: center;
+}
